@@ -172,7 +172,7 @@ require '../config/database.php';
         $recent = [];
        }
     try {
-        $recentCats = $pdo->query("SELECT id, name FROM categories ORDER BY id DESC LIMIT 3")->fetchAll(PDO::FETCH_ASSOC);
+        $recentCats = $pdo->query("SELECT id, name FROM categories ORDER BY id DESC LIMIT 2")->fetchAll(PDO::FETCH_ASSOC);
     } catch (Exception $e) {
         $recentCats = [];
     }
