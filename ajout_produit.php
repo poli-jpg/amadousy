@@ -17,7 +17,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['ajouter'])) {
     $categorie_id = $_POST['categorie_id'] ?? null;
     
     try {
-        // préparer la valeur de categorie_id (null ou entier)
         $catParam = $categorie_id === '' || $categorie_id === null ? null : (int)$categorie_id;
         $stmt = $pdo->prepare("INSERT INTO produit (name, description, prix, quantite, categorie_id) VALUES (?, ?, ?, ?, ?)");
         $stmt->execute([$name, $description, $price, $quantite, $catParam]);
@@ -179,4 +178,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['ajouter'])) {
     </div>
     
 </body>
+
 </html>
